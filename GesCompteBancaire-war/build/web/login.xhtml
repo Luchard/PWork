@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+   
+  
+  <!-- Bootstrap core CSS-->
+  <link href="${facesContext.externalContext.requestContextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
+  <!-- Custom fonts for this template-->
+  <link href="${facesContext.externalContext.requestContextPath}/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"></link>
+  <!-- Custom styles for this template-->
+  <link href="${facesContext.externalContext.requestContextPath}/resources/css/sb-admin.css" rel="stylesheet"></link>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Login Page</title>
+<!--	<link type="text/css"
+		href="${facesContext.externalContext.requestContextPath}/resources/css/style.css"
+		rel="stylesheet" />
+	<link type="image/x-icon"
+		href="${facesContext.externalContext.requestContextPath}/resources/images/favicon.ico"
+		rel="shortcut icon" />-->
+</h:head>
+
+    <h:body class="bg-dark">
+   
+  <div class="container">
+    <div class="card card-login mx-auto mt-5">
+      <div class="card-header">Login</div>
+      <div class="card-body">
+      
+<!--	<div id="message">
+	<p:ajaxStatus style="display:block;  margin-top:.5em;">
+		<f:facet name="default">
+			<h:outputText value="Please enter your credentials." />
+		</f:facet>
+		<f:facet name="start">
+			<h:outputText value="Please wait #{loginBean.uname}, Connecting database..." />
+		</f:facet>
+		<f:facet name="complete">
+			<h:outputText value="Please try again #{loginBean.uname}, Database/Login error!!" />
+		</f:facet>
+	</p:ajaxStatus>
+	</div>	-->
+
+	<h:form id="loginForm">
+		
+		
+                            <div class="form-group">
+            <label for="exampleInputEmail1">Username</label>
+       
+     <p:inputText class="form-control" id="username" value="#{loginBean.uname}"></p:inputText>
+			
+                            </div>
+            
+             <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+           
+         <p:password id="password" class="form-control" value="#{loginBean.password}"
+					feedback="false"></p:password>
+             </div>
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox"/> Remember Password</label>
+            </div>
+          </div>		
+                            <p:commandButton id="loginButton" class="btn btn-primary btn-block" action="#{loginBean.login}"
+					value="Login">
+				</p:commandButton>
+			
+		
+		
+	</h:form>
+<div class="text-center">
+          <a class="d-block small mt-3" href="${facesContext.externalContext.requestContextPath}/faces/register.html">Register an Account</a>
+          <a class="d-block small" href="${facesContext.externalContext.requestContextPath}/faces/forgot-password.html">Forgot Password?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+           </h:body>
+</html>

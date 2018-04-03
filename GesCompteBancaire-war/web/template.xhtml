@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:head>
+        <link href="C:\Users\luchi\Documents\tpJava\GesCompteBancaire\GesCompteBancaire-war\web\resources\vendor\datatables\dataTables.bootstrap4.css" rel="stylesheet"></link>
+
+        <link href="${facesContext.externalContext.requestContextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+
+        <link href="${facesContext.externalContext.requestContextPath}/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+        <link href="${facesContext.externalContext.requestContextPath}/resources/css/sb-admin.css" rel="stylesheet"></link>
+    </h:head>
+
+    <h:body class="fixed-nav sticky-footer bg-dark" id="page-top">
+        
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="${facesContext.externalContext.requestContextPath}/faces/index.xhtml">LuluBank</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="${facesContext.externalContext.requestContextPath}/faces/index.xhtml">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Dashboard</span>
+          </a>
+        </li>
+         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseClients" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-users"></i>
+            <span class="nav-link-text">Clients</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseClients">
+            <li>
+              <a href="${facesContext.externalContext.requestContextPath}/faces/ListeClients.xhtml"> 
+                  <i class="fa fa-fw fa-list"></i>
+            <span class="nav-link-text">Liste Clients</span>
+              </a>
+            </li>
+            <li>
+              <a href="${facesContext.externalContext.requestContextPath}/faces/NouveauClient.xhtml">
+                  <i class="fa fa-fw fa-user-plus"></i>
+            <span class="nav-link-text">Nouveau Client</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComptes" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-folder-open"></i>
+            <span class="nav-link-text">Comptes Bancaires</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseComptes">
+            <li>
+               <a href="${facesContext.externalContext.requestContextPath}/faces/ListeCompteBancaires.xhtml"> 
+                  <i class="fa fa-fw fa-list"></i>
+            <span class="nav-link-text">Liste Comptes</span>
+              </a>
+            </li>
+            <li>
+               <a href="${facesContext.externalContext.requestContextPath}/faces/NouveauCompte.xhtml">
+                  <i class="fa fa-fw fa-folder-o"></i>
+            <span class="nav-link-text">Nouveau Compte</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      
+        
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-money"></i>
+            <span class="nav-link-text">Transactions</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseComponents">
+            <li>
+              <a href="${facesContext.externalContext.requestContextPath}/faces/ListeTransaction.xhtml">
+                
+              <i class="fa fa-fw fa-list"></i>
+            <span class="nav-link-text">  Liste Transaction</span>
+              </a>
+            </li>
+            <li>
+              <a href="${facesContext.externalContext.requestContextPath}/faces/NouvelleTransaction.xhtml">
+                  
+              <i class="fa fa-fw fa-plus"></i>
+            <span class="nav-link-text">  Nouvelle transaction</span>
+              </a>
+            </li>
+               <li>
+                   
+              <a href="${facesContext.externalContext.requestContextPath}/faces/VirementCompte.xhtml">
+                 
+               <i class="fa fa-fw fa-credit-card-alt"></i>
+            <span class="nav-link-text">  Virement bancaire</span>
+              </a>
+            </li>
+               <li>
+              <a href="${facesContext.externalContext.requestContextPath}/faces/FermerCompte.xhtml">
+               <i class="fa fa-fw fa-close"></i>
+            <span class="nav-link-text">Fermeture compte</span>
+                
+              </a>
+            </li>
+          </ul>
+        </li>
+       
+          
+             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseParametres" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-cog"></i>
+            <span class="nav-link-text">Paramètres</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseParametres">
+            <li>
+              <a href="${facesContext.externalContext.requestContextPath}/faces/LiisteUtilisateurs.xhtml">
+                
+              <i class="fa fa-fw fa-list"></i>
+            <span class="nav-link-text">  Liste Utilisateurs</span>
+              </a>
+            </li>
+            <li>
+              <a href="${facesContext.externalContext.requestContextPath}/faces/NouvelleTransaction.xhtml">
+                  
+              <i class="fa fa-fw fa-user-plus"></i>
+            <span class="nav-link-text">  Nouvel utilisateur</span>
+              </a>
+            </li>
+               
+              
+          </ul>
+        </li>
+      </ul>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+       
+        <li class="nav-item">
+          <form class="form-inline my-2 my-lg-0 mr-lg-2">
+              <label class="form-control">Utilisateur Connecté #{loginBean.utilisateurConnecte.prenom} #{loginBean.utilisateurConnecte.nom}</label>
+            
+          </form>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+         <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+     
+      <div class="row">
+        <div class="col-12">
+         
+           <ui:insert name="content">
+                    Default Content
+                </ui:insert>
+        </div>
+      </div>
+    </div>
+         </div>
+           
+
+         
+              
+   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+           
+            <h:form id="loginForm">
+		
+			
+			
+                            <p:commandButton id="loginButton" action="#{loginBean.logout()}"
+                                             value="Logout" style="float: right;">
+				</p:commandButton>
+			
+		
+	</h:form>
+          </div>
+        </div>
+      </div>
+    </div>
+          
+
+
+<script src="${facesContext.externalContext.requestContextPath}/resources/vendor/jquery/jquery.min.js"></script>
+    <script src="${facesContext.externalContext.requestContextPath}/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+    <script src="${facesContext.externalContext.requestContextPath}/resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+ 
+    <!-- Custom scripts for all pages-->
+    
+    <!-- Custom scripts for this page-->
+   <script src="${facesContext.externalContext.requestContextPath}/resources/vendor/chart.js/Chart.min.js"></script>
+    <script src="${facesContext.externalContext.requestContextPath}/resources/js/sb-admin.min.js"></script>
+ <script src="${facesContext.externalContext.requestContextPath}/resources/js/sb-admin-charts.min.js"></script>
+
+    </h:body>
+
+
+
+</html>
